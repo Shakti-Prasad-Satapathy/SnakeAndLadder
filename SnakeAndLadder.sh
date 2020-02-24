@@ -1,6 +1,7 @@
 #!/bin/bash -x
 
 user1=0
+count=0
 while [[ $user1 -lt 100 ]]
 do
 	die_value=$(( (RANDOM % 6) +1 ))
@@ -15,6 +16,7 @@ do
 		elif [[ $user1 -eq 100 ]]
 		then
 			echo Congrats User 1... You Win
+			echo Total $(( count )) number of time the dice was played
 			exit
 		fi
 	elif [[ $option -eq 2 ]]
@@ -25,4 +27,6 @@ do
 			user1=0
 		fi
 	fi
+	count=$(( count + 1 ))
+	user1array[count]=$user1
 done
