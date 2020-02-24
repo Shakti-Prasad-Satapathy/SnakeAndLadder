@@ -9,6 +9,14 @@ do
 	if [[ $option -eq 1 ]]
 	then
 		user1=$(( user1 + die_value ))
+		if [[ $user1 -gt 100 ]]
+		then
+			user1=$(( user1 - die_value ))
+		elif [[ $user1 -eq 100 ]]
+		then
+			echo Congrats User 1... You Win
+			exit
+		fi
 	elif [[ $option -eq 2 ]]
 	then
 		user1=$(( user1 - die_value ))
